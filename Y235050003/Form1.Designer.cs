@@ -28,32 +28,182 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            cntTbX = new TextBox();
+            label1 = new Label();
+            cntTbY = new TextBox();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            lntTb = new TextBox();
+            noeTb = new TextBox();
+            raTb = new TextBox();
+            coorLb = new ListBox();
+            pictureBox1 = new PictureBox();
+            btnRnd = new Button();
+            btnDraw = new Button();
+            btnRotate = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // cntTbX
             // 
-            button1.Location = new Point(270, 166);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            cntTbX.Location = new Point(165, 44);
+            cntTbX.Name = "cntTbX";
+            cntTbX.Size = new Size(125, 27);
+            cntTbX.TabIndex = 0;
+            cntTbX.TextChanged += cntTbX_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(34, 47);
+            label1.Name = "label1";
+            label1.Size = new Size(95, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Center Points";
+            label1.Click += label1_Click;
+            // 
+            // cntTbY
+            // 
+            cntTbY.Location = new Point(307, 44);
+            cntTbY.Name = "cntTbY";
+            cntTbY.Size = new Size(125, 27);
+            cntTbY.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(34, 97);
+            label2.Name = "label2";
+            label2.Size = new Size(54, 20);
+            label2.TabIndex = 3;
+            label2.Text = "Length";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(34, 148);
+            label3.Name = "label3";
+            label3.Size = new Size(125, 20);
+            label3.TabIndex = 4;
+            label3.Text = "Number of Edges";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(34, 203);
+            label4.Name = "label4";
+            label4.Size = new Size(109, 20);
+            label4.TabIndex = 5;
+            label4.Text = "Rotation Angle";
+            // 
+            // lntTb
+            // 
+            lntTb.Location = new Point(165, 94);
+            lntTb.Name = "lntTb";
+            lntTb.Size = new Size(125, 27);
+            lntTb.TabIndex = 6;
+            // 
+            // noeTb
+            // 
+            noeTb.Location = new Point(165, 145);
+            noeTb.Name = "noeTb";
+            noeTb.Size = new Size(125, 27);
+            noeTb.TabIndex = 7;
+            noeTb.TextChanged += noeTb_TextChanged;
+            // 
+            // raTb
+            // 
+            raTb.Location = new Point(165, 203);
+            raTb.Name = "raTb";
+            raTb.Size = new Size(125, 27);
+            raTb.TabIndex = 8;
+            // 
+            // coorLb
+            // 
+            coorLb.FormattingEnabled = true;
+            coorLb.Location = new Point(34, 271);
+            coorLb.Name = "coorLb";
+            coorLb.Size = new Size(256, 124);
+            coorLb.TabIndex = 9;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(511, 44);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(384, 351);
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
+            // btnRnd
+            // 
+            btnRnd.Location = new Point(338, 271);
+            btnRnd.Name = "btnRnd";
+            btnRnd.Size = new Size(149, 29);
+            btnRnd.TabIndex = 11;
+            btnRnd.Text = "Set Random Value";
+            btnRnd.UseVisualStyleBackColor = true;
+            // 
+            // btnDraw
+            // 
+            btnDraw.Location = new Point(338, 318);
+            btnDraw.Name = "btnDraw";
+            btnDraw.Size = new Size(149, 29);
+            btnDraw.TabIndex = 12;
+            btnDraw.Text = "Draw";
+            btnDraw.UseVisualStyleBackColor = true;
+            btnDraw.Click += btnDraw_Click;
+            // 
+            // btnRotate
+            // 
+            btnRotate.Location = new Point(338, 366);
+            btnRotate.Name = "btnRotate";
+            btnRotate.Size = new Size(149, 29);
+            btnRotate.TabIndex = 13;
+            btnRotate.Text = "Rotate Angle";
+            btnRotate.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            ClientSize = new Size(907, 450);
+            Controls.Add(btnRotate);
+            Controls.Add(btnDraw);
+            Controls.Add(btnRnd);
+            Controls.Add(pictureBox1);
+            Controls.Add(coorLb);
+            Controls.Add(raTb);
+            Controls.Add(noeTb);
+            Controls.Add(lntTb);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(cntTbY);
+            Controls.Add(label1);
+            Controls.Add(cntTbX);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private TextBox cntTbX;
+        private Label label1;
+        private TextBox cntTbY;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private TextBox lntTb;
+        private TextBox noeTb;
+        private TextBox raTb;
+        private ListBox coorLb;
+        private PictureBox pictureBox1;
+        private Button btnRnd;
+        private Button btnDraw;
+        private Button btnRotate;
     }
 }
