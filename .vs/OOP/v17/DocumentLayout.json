@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\Master_Degree_OOP_Course\\OOP_Homework\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A58625D1-6334-4580-9570-43C8FA675AA0}|Y235050003\\Y235050003.csproj|C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\Master_Degree_OOP_Course\\OOP_Homework\\y235050003\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A58625D1-6334-4580-9570-43C8FA675AA0}|Y235050003\\Y235050003.csproj|solutionrelative:y235050003\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A58625D1-6334-4580-9570-43C8FA675AA0}|Y235050003\\Y235050003.csproj|C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\Master_Degree_OOP_Course\\OOP_Homework\\y235050003\\point2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A58625D1-6334-4580-9570-43C8FA675AA0}|Y235050003\\Y235050003.csproj|solutionrelative:y235050003\\point2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A58625D1-6334-4580-9570-43C8FA675AA0}|Y235050003\\Y235050003.csproj|c:\\users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\master_degree_oop_course\\oop_homework\\y235050003\\polygon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A58625D1-6334-4580-9570-43C8FA675AA0}|Y235050003\\Y235050003.csproj|solutionrelative:y235050003\\polygon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A58625D1-6334-4580-9570-43C8FA675AA0}|Y235050003\\Y235050003.csproj|C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\Master_Degree_OOP_Course\\OOP_Homework\\y235050003\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A58625D1-6334-4580-9570-43C8FA675AA0}|Y235050003\\Y235050003.csproj|solutionrelative:y235050003\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\Master_Degree_OOP_Course\\OOP_Homework\\Y235050003\\Form1.cs",
+              "RelativeDocumentMoniker": "Y235050003\\Form1.cs",
+              "ToolTip": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\Master_Degree_OOP_Course\\OOP_Homework\\Y235050003\\Form1.cs",
+              "RelativeToolTip": "Y235050003\\Form1.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAkwIEAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T17:17:58.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\Master_Degree_OOP_Course\\OOP_Homework\\Y235050003\\Form1.cs",
+              "RelativeDocumentMoniker": "Y235050003\\Form1.cs",
+              "ToolTip": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\Master_Degree_OOP_Course\\OOP_Homework\\Y235050003\\Form1.cs [Tasar\u0131m]",
+              "RelativeToolTip": "Y235050003\\Form1.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T17:17:02.598Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Point2D.cs",
+              "DocumentMoniker": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\Master_Degree_OOP_Course\\OOP_Homework\\Y235050003\\Point2D.cs",
+              "RelativeDocumentMoniker": "Y235050003\\Point2D.cs",
+              "ToolTip": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\Master_Degree_OOP_Course\\OOP_Homework\\Y235050003\\Point2D.cs",
+              "RelativeToolTip": "Y235050003\\Point2D.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAgwCsAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T17:01:16.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Polygon.cs",
+              "DocumentMoniker": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\Master_Degree_OOP_Course\\OOP_Homework\\Y235050003\\Polygon.cs",
+              "RelativeDocumentMoniker": "Y235050003\\Polygon.cs",
+              "ToolTip": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\Master_Degree_OOP_Course\\OOP_Homework\\Y235050003\\Polygon.cs",
+              "RelativeToolTip": "Y235050003\\Polygon.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAwwGgAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T16:50:36.896Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
