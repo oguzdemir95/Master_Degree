@@ -42,6 +42,7 @@
             btnRnd = new Button();
             btnDraw = new Button();
             btnRotate = new Button();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             cntTbX.Name = "cntTbX";
             cntTbX.Size = new Size(125, 27);
             cntTbX.TabIndex = 0;
+            cntTbX.Text = "0";
             cntTbX.TextChanged += cntTbX_TextChanged;
             // 
             // label1
@@ -69,6 +71,7 @@
             cntTbY.Name = "cntTbY";
             cntTbY.Size = new Size(125, 27);
             cntTbY.TabIndex = 2;
+            cntTbY.Text = "0";
             // 
             // label2
             // 
@@ -103,6 +106,7 @@
             lntTb.Name = "lntTb";
             lntTb.Size = new Size(125, 27);
             lntTb.TabIndex = 6;
+            lntTb.Text = "4";
             // 
             // noeTb
             // 
@@ -110,6 +114,7 @@
             noeTb.Name = "noeTb";
             noeTb.Size = new Size(125, 27);
             noeTb.TabIndex = 7;
+            noeTb.Text = "5";
             noeTb.TextChanged += noeTb_TextChanged;
             // 
             // raTb
@@ -118,6 +123,7 @@
             raTb.Name = "raTb";
             raTb.Size = new Size(125, 27);
             raTb.TabIndex = 8;
+            raTb.Text = "0";
             // 
             // coorLb
             // 
@@ -129,11 +135,14 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = SystemColors.Control;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Location = new Point(511, 44);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(384, 351);
+            pictureBox1.Size = new Size(380, 350);
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
+            pictureBox1.Paint += pictureBox1_Paint;
             // 
             // btnRnd
             // 
@@ -143,6 +152,7 @@
             btnRnd.TabIndex = 11;
             btnRnd.Text = "Set Random Value";
             btnRnd.UseVisualStyleBackColor = true;
+            btnRnd.Click += btnRnd_Click;
             // 
             // btnDraw
             // 
@@ -162,12 +172,23 @@
             btnRotate.TabIndex = 13;
             btnRotate.Text = "Rotate Angle";
             btnRotate.UseVisualStyleBackColor = true;
+            btnRotate.Click += btnRotate_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(34, 248);
+            label5.Name = "label5";
+            label5.Size = new Size(89, 20);
+            label5.TabIndex = 14;
+            label5.Text = "Coordinates";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(907, 450);
+            Controls.Add(label5);
             Controls.Add(btnRotate);
             Controls.Add(btnDraw);
             Controls.Add(btnRnd);
@@ -200,10 +221,11 @@
         private TextBox lntTb;
         private TextBox noeTb;
         private TextBox raTb;
-        private ListBox coorLb;
         private PictureBox pictureBox1;
         private Button btnRnd;
         private Button btnDraw;
         private Button btnRotate;
+        private Label label5;
+        private ListBox coorLb;
     }
 }
