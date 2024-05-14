@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// ***************************************************************************************************************************
+// **                                                                                                                       **
+// ** STUDENT NAME: OĞUZHAN DEMİR                                                                                           **
+// ** STUDENT NUMBER: Y235050003                                                                                            **
+// ***************************************************************************************************************************
 namespace Y235050003
 {
     internal class Point2D
@@ -13,22 +18,17 @@ namespace Y235050003
         private double _y;
 
         //Define properties
-        public double x
-        {
-            get { return _x; }
-            set { _x = value; }
-        }
-        public double y
-        {
-            get { return _y; }
-            set { _y = value; }
-        }
+        public double x { get => _x; set => _x = value; }
+        
+        public double y { get => _y; set => _y = value; }
 
         // Constructor method with no parameters
         public Point2D() 
         {
-            x = 0;
-            y = 0;
+            // It creates random x and y values between [0,3]
+            Random rand = new Random();
+            x = rand.Next(0,3);
+            y = rand.Next(0,3);
         }
 
         // Constructor method with two parameters, x and y
@@ -54,7 +54,7 @@ namespace Y235050003
         {
             double r=Math.Sqrt(x*x+y*y);
             double theta = Math.Atan(y / x);
-            Point2D pPoint = new Point2D(x, y);
+            Point2D pPoint = new Point2D(r,theta);
             return pPoint;
         }
 

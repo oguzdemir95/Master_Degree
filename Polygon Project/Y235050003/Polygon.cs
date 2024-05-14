@@ -6,6 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
 
+// ***************************************************************************************************************************
+// **                                                                                                                       **
+// ** STUDENT NAME: OĞUZHAN DEMİR                                                                                           **
+// ** STUDENT NUMBER: Y235050003                                                                                            **
+// ***************************************************************************************************************************
 namespace Y235050003
 {
     internal class Polygon:Point2D
@@ -26,7 +31,7 @@ namespace Y235050003
             
         }
 
-        // Constructor with three parameters, center, length and number of edges
+        // Constructor with three parameters; center, length and number of edges
         public Polygon(Point2D center,int length,int edges)
         {
             Center = center;

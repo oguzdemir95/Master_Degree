@@ -53,7 +53,6 @@
             cntTbX.Size = new Size(125, 27);
             cntTbX.TabIndex = 0;
             cntTbX.Text = "0";
-            cntTbX.TextChanged += cntTbX_TextChanged;
             // 
             // label1
             // 
@@ -63,7 +62,6 @@
             label1.Size = new Size(95, 20);
             label1.TabIndex = 1;
             label1.Text = "Center Points";
-            label1.Click += label1_Click;
             // 
             // cntTbY
             // 
@@ -115,7 +113,6 @@
             noeTb.Size = new Size(125, 27);
             noeTb.TabIndex = 7;
             noeTb.Text = "5";
-            noeTb.TextChanged += noeTb_TextChanged;
             // 
             // raTb
             // 
@@ -123,7 +120,7 @@
             raTb.Name = "raTb";
             raTb.Size = new Size(125, 27);
             raTb.TabIndex = 8;
-            raTb.Text = "0";
+            raTb.Text = "30";
             // 
             // coorLb
             // 
