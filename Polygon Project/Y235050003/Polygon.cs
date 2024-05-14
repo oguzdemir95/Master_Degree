@@ -40,7 +40,7 @@ namespace Y235050003
         }
 
         // Calculates corner points of polygon
-        public Point2D[] calculateEdgeCoordinates(Point2D center, int length,int edges)
+        public Point2D[] calculateEdgeCoordinates(Point2D center, double length,int edges)
         {
             double theta = 0;
 
@@ -75,7 +75,7 @@ namespace Y235050003
         }
 
         // Calculates rotated corner points of polygon
-        public Point2D[] rotatePolygon(Point2D center, int length, int edges, double angle)
+        public Point2D[] rotatePolygon(Point2D center, double length, int edges, double angle)
         {
             // Theta's initial value is 270 to get the polygon straight
             double theta = 270;

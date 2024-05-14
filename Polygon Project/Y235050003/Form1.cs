@@ -3,6 +3,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static System.Net.Mime.MediaTypeNames;
 
 // ***************************************************************************************************************************
 // **                                                                                                                       **
@@ -25,26 +26,50 @@ namespace Y235050003
         // Random angle value is stored to be used by Rotate Button
         // Draw button clears the angle after clicked
         // But owing to this variable, draw button enables random angle to apply without reset
-        int rRotAngle = 0;
+        double rRotAngle = 0;
 
         // After clicking Draw button, the coordinates of polygon is written on listbox and the polygon is drawn on picturebox
         private void btnDraw_Click(object sender, EventArgs e)
         {
             // First, all values are checked whether they are typed as numbers
-            if (!(cntTbX.Text.All(char.IsDigit))|| !(cntTbY.Text.All(char.IsDigit))|| !(lntTb.Text.All(char.IsDigit)) ||
-                !(noeTb.Text.All(char.IsDigit)))
+            if (!(cntTbX.Text.All(c => char.IsDigit(c) || c == '-' && cntTbX.Text.IndexOf(c) > 0 
+                || c == ',' && cntTbX.Text.IndexOf(c) > 0 && cntTbX.Text.Count(x => x == ',') <= 1))
+                || !(cntTbY.Text.All(c => char.IsDigit(c) || (c == '-' && cntTbY.Text.IndexOf(c) > 0) 
+                || (c == ',' && cntTbY.Text.IndexOf(c) > 0 && cntTbY.Text.Count(x => x == ',') <= 1)))
+                || !(lntTb.Text.All(c => char.IsDigit(c) || (c == '-' && lntTb.Text.IndexOf(c) > 0) 
+                || (c == ',' && lntTb.Text.IndexOf(c) > 0 && lntTb.Text.Count(x => x == ',') <= 1)))
+                || !(noeTb.Text.All(c => char.IsDigit(c) || (c == '-' && noeTb.Text.IndexOf(c) > 0) 
+                || (c == ',' && noeTb.Text.IndexOf(c) > 0 && noeTb.Text.Count(x => x == ',') <= 1)))
+                || !(raTb.Text.All(c => char.IsDigit(c) || (c == '-' && raTb.Text.IndexOf(c) > 0) 
+                || (c == ',' && raTb.Text.IndexOf(c) > 0 && raTb.Text.Count(x => x == ',') <= 1))))
             {
-                MessageBox.Show("All values must be numeric!");
+                MessageBox.Show("All values must be numeric! \nA comma must be used instead of a dot!");
                 return;
             }
 
             // Receives the values from textboxes
             Point2D center = new Point2D(Convert.ToInt32(cntTbX.Text), Convert.ToInt32(cntTbY.Text));
-            int length = Convert.ToInt32(lntTb.Text);
+            double length = Convert.ToDouble(lntTb.Text);
+
+            // Checks whether length is smaller than zero
+            if(length<=0)
+            {
+                MessageBox.Show("Polygon's edge length must be greater than 0 (zero)!");
+                return;
+            }
+
+            // Checks whether number of edges is an integer
+            int number;
+            if(!(int.TryParse(noeTb.Text, out number)))
+            {
+                MessageBox.Show("Number of edges must be an integer!");
+                return;
+            }
+
             int edge = Convert.ToInt32(noeTb.Text);
 
             // Edge number is checked whether it is smaller than 3
-            if(edge<3)
+            if (edge<3)
             {
                 MessageBox.Show("Number of edges must be greater than or equal to 3!");
                 return;
@@ -91,10 +116,18 @@ namespace Y235050003
         private void btnRotate_Click(object sender, EventArgs e)
         {
             // First, all values are checked whether they are typed as numbers
-            if (!(cntTbX.Text.All(char.IsDigit)) || !(cntTbY.Text.All(char.IsDigit)) || !(lntTb.Text.All(char.IsDigit)) ||
-                !(noeTb.Text.All(char.IsDigit))|| !(raTb.Text.All(char.IsDigit)))
+            if (!(cntTbX.Text.All(c => char.IsDigit(c) || c == '-' && cntTbX.Text.IndexOf(c) > 0
+                || c == ',' && cntTbX.Text.IndexOf(c) > 0 && cntTbX.Text.Count(x => x == ',') <= 1))
+                || !(cntTbY.Text.All(c => char.IsDigit(c) || (c == '-' && cntTbY.Text.IndexOf(c) > 0)
+                || (c == ',' && cntTbY.Text.IndexOf(c) > 0 && cntTbY.Text.Count(x => x == ',') <= 1)))
+                || !(lntTb.Text.All(c => char.IsDigit(c) || (c == '-' && lntTb.Text.IndexOf(c) > 0)
+                || (c == ',' && lntTb.Text.IndexOf(c) > 0 && lntTb.Text.Count(x => x == ',') <= 1)))
+                || !(noeTb.Text.All(c => char.IsDigit(c) || (c == '-' && noeTb.Text.IndexOf(c) > 0)
+                || (c == ',' && noeTb.Text.IndexOf(c) > 0 && noeTb.Text.Count(x => x == ',') <= 1)))
+                || !(raTb.Text.All(c => char.IsDigit(c) || (c == '-' && raTb.Text.IndexOf(c) > 0)
+                || (c == ',' && raTb.Text.IndexOf(c) > 0 && raTb.Text.Count(x => x == ',') <= 1))))
             {
-                MessageBox.Show("All values must be numeric!");
+                MessageBox.Show("All values must be numeric! \nA comma must be used instead of a dot!");
                 return;
             }
 
@@ -107,7 +140,22 @@ namespace Y235050003
 
             // Receives the values from textboxes
             Point2D center = new Point2D(Convert.ToInt32(cntTbX.Text), Convert.ToInt32(cntTbY.Text));
-            int length = Convert.ToInt32(lntTb.Text);
+            double length = Convert.ToDouble(lntTb.Text);
+
+            // Checks whether length is smaller than zero
+            if (length <= 0)
+            {
+                MessageBox.Show("Polygon's edge length must be greater than 0 (zero)!");
+            }
+
+            // Checks whether number of edges is an integer
+            int number;
+            if (!(int.TryParse(noeTb.Text, out number)))
+            {
+                MessageBox.Show("Number of edges must be an integer!");
+                return;
+            }
+
             int edge = Convert.ToInt32(noeTb.Text);
 
             // Edge number is checked whether it is smaller than 3
@@ -146,7 +194,7 @@ namespace Y235050003
             
             // Receives the values from textboxes
             Point2D center = new Point2D(Convert.ToInt32(cntTbX.Text), Convert.ToInt32(cntTbY.Text));
-            int length = Convert.ToInt32(lntTb.Text);
+            double length = Convert.ToDouble(lntTb.Text);
             int edge = Convert.ToInt32(noeTb.Text);
             double rotAngle = Convert.ToDouble(raTb.Text);
             
@@ -202,7 +250,7 @@ namespace Y235050003
             Random rnd = new Random();
             int lnt = rnd.Next(3, 9);
             int noe=rnd.Next(3,10);
-            int ang = rnd.Next(0, 359);
+            double ang = rnd.Next(0, 359);
             lntTb.Text = lnt.ToString();
             noeTb.Text=noe.ToString();
             raTb.Text=ang.ToString();
