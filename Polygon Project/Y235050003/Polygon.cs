@@ -29,15 +29,17 @@ namespace Y235050003
         // Constructor with no parameters
         public Polygon()
         {
-            
+            _center=new Point2D(0,0);
+            _length = 5;
+            _numberofEdges = 4;
         }
 
         // Constructor with three parameters; center, length and number of edges
         public Polygon(Point2D center,int length,int edges)
         {
-            Center = center;
-            Length = length; 
-            NumberofEdges=edges;
+            _center = center;
+            _length = length; 
+            _numberofEdges=edges;
         }
 
         // Calculates corner points of polygon
@@ -99,7 +101,5 @@ namespace Y235050003
             // This function returns array of new (rotated) polygon corners
             return rotPoints;
         }
-        
-
     }
 }

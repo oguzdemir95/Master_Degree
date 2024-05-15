@@ -203,7 +203,6 @@
             Controls.Add(cntTbX);
             Name = "Form1";
             Text = "Polygon Creater";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

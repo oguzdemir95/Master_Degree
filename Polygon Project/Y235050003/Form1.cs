@@ -253,12 +253,5 @@ namespace Y235050003
             // Random angle value is assigned by Random Button
             rRotAngle = ang;
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }
