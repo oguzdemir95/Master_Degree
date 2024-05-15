@@ -104,7 +104,7 @@
             lntTb.Name = "lntTb";
             lntTb.Size = new Size(125, 27);
             lntTb.TabIndex = 6;
-            lntTb.Text = "4";
+            lntTb.Text = "5";
             // 
             // noeTb
             // 
@@ -112,7 +112,7 @@
             noeTb.Name = "noeTb";
             noeTb.Size = new Size(125, 27);
             noeTb.TabIndex = 7;
-            noeTb.Text = "5";
+            noeTb.Text = "4";
             // 
             // raTb
             // 
@@ -132,6 +132,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = SystemColors.Control;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Location = new Point(511, 44);
@@ -201,7 +202,8 @@
             Controls.Add(label1);
             Controls.Add(cntTbX);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Polygon Creater";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

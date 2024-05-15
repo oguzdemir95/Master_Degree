@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,13 +41,10 @@ namespace Y235050003
         }
 
         // Calculates corner points of polygon
-        public Point2D[] calculateEdgeCoordinates(Point2D center, double length,int edges)
+        public Point2D[] calculateEdgeCoordinates(Point2D center, double r, int edges)
         {
             double theta = 0;
-
-            // r is the distance from origin to a corner of polygon, r = l/2*sin(theta)
-            double r = (length / 2) / (Math.Sin((180 / edges)*(Math.PI/180)));
-
+            
             // Creating a vertex array to store points information of polygon
             Point2D[] vertex = new Point2D[edges];
 
@@ -60,12 +58,8 @@ namespace Y235050003
                 vertex[i] = new Point2D(pAdd.x,pAdd.y);
 
                 // Corner points are added to center points typed on textboxes
-                // There are 190 and 175 values, because picturebox take its center in these points (its size is 380x350)
-                // 190 = x, 175 = y => (190, 175)
-                // Therefore, the polygon is created on picturebox' center
-                // Picturebox' and polygon's centers are different from each other; user sees only polygon's center values
-                vertex[i].x = center.x + pAdd.x+190;
-                vertex[i].y = center.y + pAdd.y+175;
+                vertex[i].x = center.x + pAdd.x;
+                vertex[i].y = center.y + pAdd.y;
 
                 // On every step, theta is increased to calculate next point
                 theta += 360 / edges;
@@ -75,41 +69,37 @@ namespace Y235050003
         }
 
         // Calculates rotated corner points of polygon
-        public Point2D[] rotatePolygon(Point2D center, double length, int edges, double angle)
+        // It uses only the first point
+        // Because r is constant for a straight polygon, rotation just requires adding theta angle on current theta angle
+        public Point2D[] rotatePolygon(Point2D sendCoor,double angle,int edges)
         {
-            // Theta's initial value is 270 to get the polygon straight
-            double theta = 270;
+            // A polar coordinate of the polygon is calculated using the firts point of it
+            Point2D polCoor = calculatePolarCoordinates(sendCoor.x,sendCoor.y);
 
-            // The angle entered textbox is added to initial theta value, on every step polygon is rotated as angle value
-            theta += -angle;
+            // Theta angle is incrased by rotation angle
+            // polCoor.y value is theta angle
+            // Polar Coordinates Calculation function returns r and theta
+            // r is constant, thus only theta angle is required
+            // Angle value takes negative value to rotate polygon clockwise
+            polCoor.y += -angle;
 
-            // r is the distance from origin to a corner of polygon, r = l/2*sin(theta)
-            double r = (length / 2) / (Math.Sin((180 / edges) * (Math.PI / 180)));
-
-            // Creating a rotPoints array to store new (rotated) points information of polygon
+            // rotPoints array is formed from Point2D class to store rotated points
             Point2D[] rotPoints = new Point2D[edges];
 
             // For cycle determines the new (rotated) corners of polygon
-            for (int i = 0; i < edges; i++)
+            for (int i=0;i< edges;i++)
             {
-                // pAdd is the new (rotated) corner point of polygon, sends r and theta to Cartesian Method 
-                Point2D pAdd = calculateCartesianCoordinates(r, theta);
+                // Rotated coordinates calculated by Cartesian Coordinates function
+                // It returns x and y values
+                rotPoints[i] = calculateCartesianCoordinates(polCoor.x,polCoor.y);
 
-                // New (rotated) corner points are added to center points typed on textboxes
-                // There are 190 and 175 values, because picturebox take its center in these points (its size is 380x350)
-                // 190 = x, 175 = y => (190, 175)
-                // Therefore, the polygon is rotated on picturebox' center
-                // Picturebox' and polygon's centers are different from each other; user sees only polygon's center values
-                rotPoints[i] = new Point2D(pAdd.x, pAdd.y);
-                rotPoints[i].x = center.x + pAdd.x + 190;
-                rotPoints[i].y = center.y + pAdd.y + 175;
-
-                // On every step, theta is increased to calculate next point
-                theta += 360 / edges;
+                // Owing to this equation, every corner of polygon is rotated by rotation angle
+                polCoor.y += 360/edges;
             }
             // This function returns array of new (rotated) polygon corners
             return rotPoints;
         }
+        
 
     }
 }
