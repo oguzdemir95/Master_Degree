@@ -50,7 +50,7 @@ namespace Y235050003
             // Creating a vertex array to store points information of polygon
             Point2D[] vertex = new Point2D[edges];
 
-            // For cycle determines the corners of polygon
+            // "For" cycle determines the corners of polygon
             for(int  i = 0; i < edges;i++)
             {
                 // pAdd is a corner point of polygon, sends r and theta to Cartesian Method 

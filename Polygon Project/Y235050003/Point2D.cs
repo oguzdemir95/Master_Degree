@@ -13,11 +13,11 @@ namespace Y235050003
 {
     internal class Point2D
     {
-        // Define fields
+        // Defining fields
         private double _x;
         private double _y;
 
-        //Define properties
+        //Defining properties
         public double x { get => _x; set => _x = value; }
         
         public double y { get => _y; set => _y = value; }

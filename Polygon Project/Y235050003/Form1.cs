@@ -23,7 +23,7 @@ namespace Y235050003
         // For rotation, only firts point is adequate
         Point2D sendCoor;
 
-        // Coordinates calculted through Draw Button will be stored in newCoor array to use it in Rotate Button and Picturebox
+        // Coordinates calculated through Draw Button will be stored in newCoor array to use it in Rotate Button and Picturebox
         // Rotated coordinates will be new coordinates and typed on listbox
         Point2D[] newCoor;
 
@@ -38,7 +38,7 @@ namespace Y235050003
         // After clicking Draw button, the coordinates of polygon is written on listbox and the polygon is drawn on picturebox
         private void btnDraw_Click(object sender, EventArgs e)
         {
-            // Checks whether textboxes are empty
+            // Checks whether center textboxes are empty
             if(string.IsNullOrEmpty(cntTbX.Text)||string.IsNullOrEmpty(cntTbY.Text)
                 ||string.IsNullOrEmpty(lntTb.Text)||string.IsNullOrEmpty(noeTb.Text))
             {
@@ -46,7 +46,7 @@ namespace Y235050003
                 return;
             }
 
-            // Checks whether inputs are numeric
+            // Checks whether center inputs are numeric
             if (!(cntTbX.Text.All(c => char.IsDigit(c) || c == '-' && cntTbX.Text.IndexOf(c) <= 0
             || c == ',' && cntTbX.Text.IndexOf(c) > 0 && cntTbX.Text.Count(x => x == ',') <= 1))
             || !(cntTbY.Text.All(c => char.IsDigit(c) || (c == '-' && cntTbY.Text.IndexOf(c) <= 0)
@@ -56,11 +56,11 @@ namespace Y235050003
                 return;
             }
 
-            // Receives the values from textboxes
+            // Receives the values from center and length textboxes
             Point2D center = new Point2D(Convert.ToInt32(cntTbX.Text), Convert.ToInt32(cntTbY.Text));
             double length = Convert.ToDouble(lntTb.Text);
 
-            // Checks whether inputs are numeric
+            // Checks whether length input is numeric
             if (!(lntTb.Text.All(c => char.IsDigit(c) || c == '-' && lntTb.Text.IndexOf(c) == 0 && lntTb.Text.Length > 1
                 || (c == ',' && lntTb.Text.Count(x => x == ',') == 1) && lntTb.Text.Length > 1)))
             {
@@ -68,14 +68,14 @@ namespace Y235050003
                 return;
             }
 
-            // Checks whether length is smaller than zero, it must be greater than zero
+            // Checks whether length is greater than zero
             if (length <= 0)
             {
                 MessageBox.Show("Polygon's edge length must be greater than 0 (zero)!");
                 return;
             }
 
-            // Checks whether inputs are numeric
+            // Checks whether number of edge input is numeric
             if (!(noeTb.Text.All(c => char.IsDigit(c) || c == '-' && noeTb.Text.IndexOf(c) == 0 && noeTb.Text.Length > 1
                 || (c == ',' && noeTb.Text.Count(x => x == ',') == 1) && noeTb.Text.Length > 1)))
             {
@@ -137,17 +137,18 @@ namespace Y235050003
         // It creates a cycle
         double angle = 0;
 
-        // After clicking Rotate button, the coordinates of new (rotated) polygon is written on listbox and the polygon is drawn as rotated on picturebox
+        // After clicking Rotate button, the coordinates of new (rotated) polygon is written on listbox
+        // and the polygon is drawn as rotated on picturebox
         private void btnRotate_Click(object sender, EventArgs e)
         {
-            // Checks whether textboxes are empty
+            // Checks whether angle textbox is empty
             if (string.IsNullOrEmpty(raTb.Text))
             {
                 MessageBox.Show("Values could not be null!");
                 return;
             }
 
-            // Checks whether inputs are numeric
+            // Checks whether angle input is numeric
             if (!(raTb.Text.All(c => char.IsDigit(c) || c == '-' && raTb.Text.IndexOf(c) == 0 && raTb.Text.Length > 1
                 || c == ',' && raTb.Text.Count(x => x == ',') == 1 && raTb.Text.Length > 1)))
             {
@@ -198,7 +199,7 @@ namespace Y235050003
             // Creates a g object from Graphics class
             Graphics g = e.Graphics;
 
-            // Creates pen object from Pen class, one of them is for axes and one of them is for polygon
+            // Creates pen object from Pen class, one of them (blue) is for axes and one of them (black) is for polygon
             Pen pen1 = new Pen(Color.Blue);
             Pen pen2 = new Pen(Color.Black);
 
@@ -214,11 +215,12 @@ namespace Y235050003
                 // Creates a points array from PointF class
                 PointF[] points = new PointF[edge];
 
-                // For cycle determines the corner points of polygon
+                // "For" cycle determines the corner points of polygon
                 // The coordinates are based on rotated points
                 // If the polygon is not rotated, it gets the initial drawing coordinates
                 for (int i = 0; i < edge; i++)
                 {
+                    // To centralize the polygon on picturebox, picturebox' center coordinates are added to new coordinates
                     points[i] = new PointF((float)newCoor[i].x + pictureBox1.Width / 2, pictureBox1.Height / 2 - (float)newCoor[i].y );
                 }
 
