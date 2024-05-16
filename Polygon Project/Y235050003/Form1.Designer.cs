@@ -202,7 +202,7 @@
             Controls.Add(label1);
             Controls.Add(cntTbX);
             Name = "Form1";
-            Text = "Polygon Creater";
+            Text = "Polygon Plotter";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
